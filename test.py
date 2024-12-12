@@ -11,7 +11,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 driver = webdriver.Chrome()
 
 # Truy cập trang Threads
-driver.get('https://www.threads.net/@baekseju98/post/DC9STzpv_pG?hl=vi')
+driver.get('https://www.threads.net')
 
 # Chờ đợi trang tải xong
 WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, 'div')))
@@ -78,7 +78,7 @@ for post in posts:
         print(f"Lỗi khi lấy dữ liệu bài viết: {e}")
 
 # Lưu dữ liệu vào file JSON
-with open('Post_data2.json', 'w', encoding='utf-8') as f:
+with open('Post_data3.json', 'w', encoding='utf-8') as f:
     json.dump(post_data, f, ensure_ascii=False, indent=4)
 
 # Đóng trình duyệt
